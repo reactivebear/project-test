@@ -1,0 +1,19 @@
+.private-layout,
+.private-layout-side-bar,
+.private-layout-content {
+	height: calc(100vh - 65px);
+}
+.private-layout {
+	padding-top: 65px;
+}
+.private-layout-side-bar {
+    width: 250px;
+}
+
+.public-footer {
+	background-color: var(--main-background);
+}
+
+.nav-pills .nav-link.active {
+	background-color: var(--main-color);
+}
