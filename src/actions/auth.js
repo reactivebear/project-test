@@ -17,14 +17,6 @@ export const login = data => dispatch => {
 	})
 }
 
-export const register = data => dispatch => {
-	post(`register`, data).then(res => {
-		if (res.statusCode === 200) {
-			history.push('/login')
-		}
-	})
-}
-
 export const logout = () => dispatch => {
 	dispatch(setToken('', ''))
 	.then(() => {
@@ -33,21 +25,6 @@ export const logout = () => dispatch => {
 	})
 }
 
-export const verifiedEmail = hash => dispatch => (
-	get(`verify/${hash}`).then(res => res.message)
-)
-
-export const sendEmailRecovery = data => dispatch => (
-	post(`recovery`, data).then(res => res.statusCode === 200)
-)
-
-export const reset = data => dispatch => (
-	post(`reset`, data).then(res => res.statusCode === 200)
-)
-
-export const verifyHash = hash => dispatch => (
-	get(`hash/${hash}`).then(res => res.statusCode === 200)
-)
 
 export const clearState = () => ({
 	type: types.CLEAR_STATE,
